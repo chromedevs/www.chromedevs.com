@@ -2,7 +2,6 @@ baseurl = "https://ChromeDevs.com/"
 title = "ChromeDevs"
 languageCode = "en-us"
 author = "Ricardo N Feliciano (FelicianoTech)"
-canonifyurls = true
 
 theme = "lean-launch-page"
 

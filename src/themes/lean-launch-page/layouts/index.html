@@ -7,19 +7,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
 	{{ template "_internal/google_analytics.html" . }}
-{{ $directory := "themes/lean-launch-page/static/" }}
-{{ $filename := "favicon.png" }}
-{{ if (where (readDir $directory) "Name" $filename) }}
 	<link rel="icon" type="image/png" href="favicon.png" />
-{{ end }}
 	<title>{{ .Site.Title }}</title>
 </head>
 <body>
-{{ $directory := "themes/lean-launch-page/static/" }}
-{{ $filename := "favicon.png" }}
-{{ if (where (readDir $directory) "Name" $filename) }}
 	<img class="logo" src="/favicon.png" alt="Logo" />
-{{ end }}
 	<ul class="social-icons">
 		{{ if isset .Site.Params "twitter" }}<li><a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
 		{{ if isset .Site.Params "facebook" }}<li><a href="{{ .Site.Params.facebook }}"><i class="fa fa-facebook"></i></a></li>{{ end }}

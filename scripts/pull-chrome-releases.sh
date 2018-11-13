@@ -14,7 +14,7 @@ i=1
 # Pull the latest release of Google Chrome for each channel
 for channel in "${!channels[@]}"; do
 
-	ver=$( curl "https://chromiumdash.appspot.com/fetch_releases?channel=${channels[$channel]}&platform=Mac&num=1" -H "accept-language: en-US,en" -H "user-agent: ChromeDevs Checker" -H "accept: application/json" -H "authority: chromiumdash.appspot.com" | jq ".[0].version" )
+	ver=$( curl "https://chromiumdash.appspot.com/fetch_releases?channel=${channels[$channel]}&platform=Mac&num=1" -H "accept-language: en-US,en" -H "user-agent: ChromeDevs Checker" -H "accept: application/json" -H "authority: chromiumdash.appspot.com" | jq ".[0].version" | cut -d "." -f 1-3 | cut -c 2- )
 
 	if (( $i < ${#channels[@]} ));then
 		theresMore=","
@@ -22,7 +22,7 @@ for channel in "${!channels[@]}"; do
 		theresMore=""
 	fi
 	
-	echo "		\"$channel\": $ver$theresMore" >> src/data/releases.json
+	echo "		\"$channel\": \"$ver\"$theresMore" >> src/data/releases.json
 
 	((i+=1))
 done

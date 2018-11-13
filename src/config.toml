@@ -8,7 +8,7 @@ theme = "lean-launch-page"
 googleAnalytics = "UA-128763596-2"
 
 [params]
-tagline = "Sign up to our mailing list below. Forum coming shortly."
+tagline = "Sign up to our mailing list below to hear about how we're building ChromeDevs."
 mailchimpURL = "//ChromeDevs.us19.list-manage.com/subscribe/post?u=d4114b4400a6d68899b45730c&amp;id=e6d657f7b5"
 
 twitter = "https://twitter.com/ChromeDevs"

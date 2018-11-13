@@ -23,5 +23,6 @@
 	<h1>{{ .Site.Title }}</h1>
 	<p>{{ .Site.Params.tagline }}</p>
 	{{ if isset .Site.Params "mailchimpurl" }}{{ partial "mailchimp-signup" . }}{{ end }}
+	{{ .Content }}
 </body>
 </html>

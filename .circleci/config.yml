@@ -23,6 +23,11 @@ jobs:
       - run:
           name: "Test Website"
           command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+      - run:
+          name: "Pull Chrome Versions"
+          command: |
+            apk add jq
+            ./scripts/pull-chrome-releases.sh
       - persist_to_workspace:
           root: src
           paths:
